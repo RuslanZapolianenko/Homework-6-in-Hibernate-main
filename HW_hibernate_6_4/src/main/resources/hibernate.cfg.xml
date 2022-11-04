@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/simplebookstore</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.pool_size">5</property>
+        <property name="hibernate.hbm2ddl.auto">create</property> <!--update параметр create говорит что будут созданы таблицы по нашему Entity-->
+<!--       <property name="hibernate.show_sql">true</property>   &lt;!&ndash;параметр true говорит что будут в консоль выводиться все генерируемые запросы sql&ndash;&gt;-->
+        <mapping class="entity.Author"/>
+        <mapping class="entity.Book"/>
+        <mapping class="entity.AuthorBookDto"/>
+
+
+    </session-factory>
+
+</hibernate-configuration>
